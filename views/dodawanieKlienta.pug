@@ -1,0 +1,66 @@
+doctype html
+head
+  link(rel='Stylesheet' href='css/dodKlienta.css')
+.header
+  .head1
+    img.logo(src='images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+  a.nav(href='/dodawanieKlienta') Dodawanie klienta
+.main
+  .mn2
+    p.klienci  Dodawanie klienta 
+  .mn3
+    form(method='POST' action='/dodajKlienta' id='my-form')
+      .row
+        .col-25
+          label(for='fname') Imię
+        .col-75
+          input#imie.input(type='text' required='' name='imie' placeholder='Twoje imię..')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='lname') Nazwisko
+        .col-75
+          input#nazwisko.input(type='text' required='' name='nazwisko' placeholder='Twoje nazwisko..')
+          p.form__help-message
+      .row
+        .divdate
+          label(for='date') Data urodzenia
+        .calendar
+          input#dataUrodzenia.input(type='date' required='' min='1940-01-01' max='2002-01-01' name='dataUrodzenia')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Numer dowodu
+        .col-75
+          input#numerDowodu.input(type='text' required='' name='numerDowodu' placeholder='Numer twojego dowodu..')
+          p.form__help-message
+      .row
+        input(type='submit' value='Dodaj klienta')
+        input(type='reset' onclick='history.back();' style='float:center' value='Anuluj')
+        input(type='reset' value='Wyczyść dane')
+  .mn5
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+script(src='validation/dodKlientascr.js')
+script.
+
+

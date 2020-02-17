@@ -1,0 +1,80 @@
+doctype html
+head
+  link(rel='Stylesheet' href='/css/szczegolySamochodu.css')
+.header
+  .head1
+    img.logo(src='/images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='samochody') Samochody
+  a.nav(href='/szczegolySamochodu') Szczegóły samochodu 
+.main
+  .mn2
+    p.klienci  Szczegóły samochodu 
+  .mn3
+    form()
+    each n in sam 
+      .row
+        .col-25
+          label(for='marka') Marka
+        .col-75
+          input#marka.input(type='text' name='marka' value=n.marka readonly='')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='model') Model
+        .col-75
+          input#model.input(type='text' name='model' value=n.model readonly='')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='pojemnosc') Pojemność silnika
+        .col-75
+          input#pojemnosc.input(type='text' name='pojemnosc' value=n.pojemnosc_silnika readonly='')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='skrzynia') Skrzynia biegów
+        .col-75
+          input#skrzynia.input(type='text' name='skrzynia' value=n.skrzynia_biegow readonly='')
+      .row
+        .col-25
+          label(for='subject') Kolor
+        .col-75
+          input#kolor.input(type='text' name='kolor' value=n.kolor readonly='')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Numer rejestracyjny
+        .col-75
+          input#idnumber.input(type='text' name='idnumber' value=n.numer_rejestracyjny readonly='')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Zdjęcie
+        .col-75
+          // <input type="file" onchange="onFileSelected(event)">
+          img#myimage(height='100' src='images/ford.jpg' value=n.zdjecie)
+          // <p class="form__help-message"></p>
+      .row
+        a.hwbutton(href='/historiaWypozyczenSamochody/'+n.id_samochodu) Historia wypożyczeń
+        a.hwbutton(href='/samochody' style='float: left') Zamknij
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+script(src='scripts/szczegolySamochodu.js')

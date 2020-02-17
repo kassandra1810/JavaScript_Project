@@ -1,0 +1,107 @@
+doctype html
+head
+  link(rel='Stylesheet' href='/css/dokWypozyczenia2.css')
+  script(src='https://kit.fontawesome.com/9650b96366.js' crossorigin='anonymous')
+.header
+  .head1
+    img.logo(src='/images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+  a.nav(href='/wypozyczenie') Wypożyczenie
+.main
+  .mn2
+    p.klienci  Wypożyczenie 
+  .mn3
+    .mn31
+      form(action='')
+        div
+          br
+          p.klienci Wybrany klient
+          br
+        .row
+          .col-25
+            label(for='fname') Imię
+          .col-75
+            input#fname(type='text' name='imie' value=klient[0].imie readonly='')
+        .row
+          .col-25
+            label(for='lname') Nazwisko
+          .col-75
+            input#lname(type='text' name='nazwisko' value=klient[0].nazwisko readonly='')
+        .row
+          .divdate
+            label(for='country') Data urodzenia
+          .calendar
+            input(type='text' name='dataUrodzenia' value=klient[0].data_urodzenia readonly='')
+        .row
+          .col-25
+            label(for='subject') Numer dowodu
+          .col-75
+            input#idNumber(type='text' name='numerDowodu' value=klient[0].numer_dowodu readonly='')
+        .row
+          a.hwbutton(id='hwbutton' href='/wybierzKlienta/'+wypozyczenie[0].id_wypozyczenia+'/'+wypozyczenie[0].id_samochodu) Zmień
+    .line
+    .mn32
+      form(method='POST' action='/zmianaDat')
+        div
+          br
+          p.klienci Daty
+          br
+        .row
+          .col-25
+            label(for='dataOd') Data od
+          .col-75
+            input(type='hidden' name='id' value=klient[0].id_klienta)
+            input#id.input(type='hidden' name='idWyp' value=wypozyczenie[0].id_wypozyczenia)
+            input#dataOd(type='date' required='' name='dataOd' value=wypozyczenie[0].data_od)
+        .row
+          .col-25
+            label(for='dataDo') Data do
+          .col-75
+            input#dataDo(type='date' required='' name='dataDo' value=wypozyczenie[0].data_do)
+            p.form__help-message
+        .row
+          .col-25
+        p.klienci Samochód
+        br
+        input(type='submit' value='Zapisz daty')
+
+      form(id='myForm' method='POST' action='/zapisanieEdycji')
+        table
+          tr
+            th.kolMarka Marka
+            th.kolModel Model
+            th.kolNumer Numer rejestracyjny        
+            tr
+              input#id.input(type='hidden' name='idSamochodu' value=samochod[0].id_samochodu)
+              input#id.input(type='hidden' name='dataOd' value=dataod)
+              input#id.input(type='hidden' name='dataOd' value=datado)
+              input#id.input(type='hidden' name='idKlienta' value=klient[0].id_klienta)
+              input#id.input(type='hidden' name='idWypozyczenia' value=wypozyczenie[0].id_wypozyczenia)
+              td= samochod[0].marka
+              td= samochod[0].model           
+              td= samochod[0].numer_rejestracyjny           
+        a.hwbutton(id='hwbutton' href='/wybierzSamochod/'+wypozyczenie[0].id_wypozyczenia+'/'+klient[0].id_klienta) Zmień samochod               
+        br
+        input(type='submit' value='Zapisz zmiany')
+        br
+  .mn5
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ

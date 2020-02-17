@@ -1,0 +1,68 @@
+doctype html
+head
+  link(rel='Stylesheet' href='css/klienciStyle.css')
+  script(src='https://kit.fontawesome.com/9650b96366.js' crossorigin='anonymous')
+.header
+  .head1
+    img.logo(src='images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+.main
+  p#demo
+  .mn2
+    #hideDiv
+    p.klienci  Klienci
+  .mn3
+    form()
+      table
+        tr
+          th.kolImie Imie
+          th.kolNazwisko Nazwisko
+          th.kolNrDowodu Numer dowodu
+          th.kolAkcja Akcja
+        each n in klientList
+          tr(onclick='myFunction('+n.imie+')')
+            td= n.imie
+            td= n.nazwisko            
+            td= n.numer_dowodu
+            td 
+                a.btn(href='edycjaKlienta/'+n.id_klienta)
+                  i.fas.fa-user-edit
+                  a.btn(href='szczegolyKlienta/'+n.id_klienta)
+                    i.fas.fa-info-circle
+                    a.btn(href='usuwanieKlienta/'+n.id_klienta onclick="return confirm('Are you sure you want to delete this item?');")
+                      i.fas.fa-trash-alt
+                    a.btn(href='historiaWypozyczenKlienci/'+n.id_klienta)
+                      i.fas.fa-history
+  .mn4
+    a.hwbutton(href='dodawanieKlienta') Dodaj nowego klienta
+  .mn5
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+//script(src='scripts/klienci.js')
+script.
+  function myFunction(x) {
+    alert(x);
+  }
+  //wybranyIndex=x.rowIndex;
+ // var y=JSON.stringify(x)
+  //alert("Section Row index is: " + y);
+  //}
+

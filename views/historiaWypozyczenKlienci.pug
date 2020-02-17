@@ -1,0 +1,67 @@
+doctype html
+head
+  link(rel='Stylesheet' href='/css/histWypozKlienci.css')
+  script(src='https://kit.fontawesome.com/9650b96366.js' crossorigin='anonymous')
+.header
+  .head1
+    img.logo(src='/images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+  a.nav(href='/historiaWypozyczenKlienci') Historia Wypożyczeń
+.main
+  .mn1
+    form()
+        label(for='fname') Imie
+        input#fname.input(type='text' name='imie' value=kl.imie readonly='')
+        label(for='fname') Nazwisko
+        input#lname.input(type='text' name='nazwiko' value=kl.nazwisko readonly='')
+        label(for='fname') Data urodzenia
+        input#bday.input(type='text' name='bday' value=kl.data_urodzenia readonly='')
+        label(for='fname') Numer Dowodu
+        input#numerId.input(type='text' name='numerId' value=kl.numer_dowodu readonly='')
+  .mn2
+    p.napis  Historia Wypożyczeń 
+  .mn3
+    form(action='')
+      table
+        tr
+          th.kolMarka Marka
+          th.kolModel Model
+          th.kolNumerR Numer rejestracyjny
+          th.kolDataOd Data od
+          th.kolDataDo Data do
+          th.kalAkcja Akcja
+        each n in samochodList
+            tr
+            td=n.marka
+            td=n.model
+            td=n.numer_rejestracyjny
+            td=n.data_od
+            td=n.data_do
+            td
+                a.btn(href='/edycjaWypozyczenia/'+n.id_wypozyczenia+'/'+kl.id_klienta+'/'+n.id_samochodu)
+                  i.fas.fa-pencil-alt
+                  a.btn(href='/usuwanieWypozyczenia/'+kl.id_klienta+'/'+n.id_wypozyczenia)
+                      i.fas.fa-trash-alt
+  .mn5
+    .row
+      a.hwbutton(href='/klienci' style='float:center') Zamknij
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatnoci
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ

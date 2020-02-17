@@ -1,0 +1,58 @@
+doctype html
+head
+  link(rel='Stylesheet' href='/css/szczegKlienta.css')
+.header
+  .head1
+    img.logo(src='/images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypoźyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+  a.nav(href='/szczegolyKlienta') Szczegóły klienta
+.main
+  .mn2
+    p.klienci  Szczegóły klienta 
+  .mn3
+    form()
+    each n in kl 
+      .row
+        .col-25
+          label(for='imie') Imię          
+        .col-75  
+          input#imie(type='text' name='imie' value=n.imie readonly='')
+      .row
+        .col-25
+          label(for='nazwisko') Nazwisko
+        .col-75
+          input#nazwisko(type='text' name='nazwisko' value=n.nazwisko readonly='')
+      .row
+        .divdate
+          label(for='dataUrodzenia') Data urodzenia
+        .calendar
+          input#dataUrodzenia(type='date' name='dataUrodzenia' value=n.data_urodzenia readonly='')
+      .row
+        .col-25
+          label(for='numerDowodu') Numer dowodu
+        .col-75
+          input#numerDowodu(type='text' name='numerDowodu' value=n.numer_dowodu readonly='')
+      .row
+        a.hwbutton(href='/historiaWypozyczenKlienci/'+n.id_klienta) Historia wypożyczeń
+        a.hwbutton(href='/klienci' style='float:left') Zamknij
+  .mn5
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ

@@ -1,0 +1,91 @@
+doctype html
+head
+  link(rel='Stylesheet' href='css/dodawanieSamochodu.css')
+.header
+  .head1
+    img.logo(src='Images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/samochody') Samochody
+  a.nav(href='/dodawanieSamochodu') Dodawanie samochodu
+.main
+  .mn2
+    p.klienci  Dodawanie samochodu 
+  .mn3
+    form(method='POST' action='/dodajSamochod' id='my-form')
+      .row
+        .col-25
+          label(for='marka') Marka
+        .col-75
+          input#marka.input(type='text' required=''  name='marka' placeholder='Marka samochodu...')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='lname') Model
+        .col-75
+          input#model.input(type='text' required='' name='model' placeholder='Model...')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='pojemnoscSilnika') Pojemność silnika
+        .col-75
+          input#pojemnoscSilnika.input(type='text' required='' name='pojemnoscSilnika' placeholder='Pojemność silnika w cm³')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='skrzyniaBiegow') Skrzynia biegów
+        .col-75
+          select#skrzyniaBiegow(required='' name='skrzyniaBiegow')
+            option(value='') Wybierz typ skrzyni
+            option(value='1') Manualna
+            option(value='2') Automatyczna stopniowa
+            option(value='3') Półautomatyczna stopniowa
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Kolor
+        .col-75
+          input#kolor.input(type='text' required='' name='kolor' placeholder='Kolor samochodu...')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Numer rejestracyjny
+        .col-75
+          input#numerRejestracyjny.input(type='text' required='' name='numerRejestracyjny' placeholder='Numer rejestracyjny..')
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Zdjęcie
+        .col-75
+          input(type='file' onchange='onFileSelected(event)')
+          img#myimage(height='100')
+          p.form__help-message
+      .row
+        input(type='submit' value='Dodaj samochód')
+        input(type='reset' onclick='history.back();' style='float:center' value='Anuluj')
+        input(type='reset' value='Wyczyść dane')
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+script(src='validation/dodawanieSamochodu.js')
+script.
+  const form = document.getElementById('my-form');
+  const inputs = form.querySelectorAll('.input');
+
+
+  

@@ -1,0 +1,291 @@
+
+* {
+	background-color: snow;
+	box-sizing: border-box;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+	grid-gap: 10px;
+	background-color: SeaGreen;
+	padding: 5px;
+}
+
+.header > div {
+	text-align: left;
+	background-color: SeaGreen;
+}
+
+.head1 {
+	grid-column: 1 / span 2;
+	grid-row: 1 / span 2;
+	max-width: 350px;
+	padding-left: 50px;
+}
+
+.logo {
+	max-width:230px;
+	max-height:100px;
+}
+
+.head2 {
+	grid-column: 3 / span 4;
+	font-family: Segoe Print;
+	font-size: 36px;
+}
+.head3 {
+	grid-column: 3 / span 4;
+	grid-row: 2;
+	background-color: SeaGreen;
+}
+
+.headButtons {
+	list-style-type: none;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	background-color: SeaGreen;
+}
+
+.headButtons li {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	padding-left: 15px;	
+	padding-right: 25px;
+	background-color: SeaGreen;
+
+}
+
+a.logowanie {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	padding-left: 70px;	
+}
+a.rejectracja {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0p;
+	padding-left: 70px;	
+}
+
+ul a {
+	background-color: Gainsboro;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+}
+
+ul a:hover, ul a:active {
+	background-color: red;
+}
+
+
+.head4 {
+	grid-column: 6 / span 5;
+	grid-row: 2;
+	background-color: SeaGreen;
+	color: white;
+}
+
+.infolinia {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	padding-left: 40px;	
+}
+
+a.wyloguj {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: right;
+	margin-left: 150px;
+	padding-left: 70px;	
+}
+
+.navigation {
+	grid-column: 1;
+	grid-row: 1;
+	display: inline-block;
+	grid-template-columns: auto;
+	grid-gap: 5px;
+	background-color: white;
+	margin: 0px;
+	padding: 3px;
+	color: black;
+}
+.navigation > div {
+	padding: 0px;
+	font-size: 15px;
+}
+
+.nav {
+	text-decoration: none;
+	color: black;
+	text-align: left;
+	margin: 0px;
+	padding: 0px 5px 5px 15px;	
+}
+
+.main {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+	grid-gap: 30px;
+	background-color: snow;
+	padding: 5px 20px;
+}
+
+.main > div {
+	background-color: snow;
+	text-align: center;
+	font-size: 30px;
+}
+
+
+.mn3 {
+	grid-column: 1 / span 10;
+	grid-row: 1 / span 5;	
+	margin: 0 auto;
+	padding: 0 auto;
+	width: 100%;
+}
+
+.mn31 {
+	width: 45%;
+	float: left;
+	text-align: left;
+	display: inline-block;
+}
+
+.mn32 {
+	width: 45%;
+	float: right;
+	text-align: left;
+	display: inline-block;
+}
+
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+
+
+.container {
+	padding: 16px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+label {
+	font-size: 20px;
+}
+
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.mn4 {
+	grid-column: 6;
+	grid-row: 10;	
+}
+
+.footer {
+	float:bottom;
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 10px;
+	background-color: SeaGreen;
+	padding: 5px;
+}
+
+
+.footer > div {
+	text-align: left;
+	background-color: SeaGreen;
+}
+
+.foot1 {
+	grid-column: 1;
+	grid-row: 1;
+	text-decoration: none;
+}
+
+
+.foot {
+	text-decoration: none;
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0 auto;
+	padding: 5px 90px 5px 90px;
+}
+
+.form__help-message {
+	margin: 0;
+	font-size: .75rem;
+}
+
+.form__help-message {
+	color: #F14B5F;
+	margin: 0;
+	font-size: .85rem;
+}
+
+
+

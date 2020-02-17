@@ -1,0 +1,71 @@
+doctype html
+head
+  link(rel='Stylesheet' href='/css/historiaWypozyczenSamochody.css')
+  script(src='https://kit.fontawesome.com/9650b96366.js' crossorigin='anonymous')
+.header
+  .head1
+    img.logo(src='/images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+  a.nav(href='/historiaWypozyczenSamochody') Historia Wypożyczeń
+.main
+  .mn1
+    form()
+        label(for='fname') Marka
+        input#marka.input(type='text' name='marka' value=sam.marka readonly='')
+        label(for='fname') Model
+        input#model.input(type='text' name='model' value=sam.model readonly='')
+        label(for='fname') Pojemnosc silnika
+        input#pojemnosc.input(type='text' name='pojemnosc' value=sam.pojemnosc_silnika readonly='')
+        label(for='fname') Skrzynia biegów
+        input#skrzynia.input(type='text' name='skrzynia' value=sam.skrzynia_biegow readonly='')
+        label(for='fname') Kolor
+        input#kolor.input(type='text' name='kolor' value=sam.kolor readonly='')
+        label(for='fname') Numer rejestracyjny
+        input#numerId.input(type='text' name='numerId' value=sam.numer_rejestracyjny readonly='')
+  .mn2
+    p.napis  Historia Wypożyczeń 
+  .mn3
+    form(action='')
+      table
+        tr
+          th.kolImie Imie
+          th.kolNazwisko Nazwisko
+          th.kolNrDowodu Numer dowodu
+          th.kolDataOd Data od
+          th.kolDataDo Data do
+          th.kalAkcja Akcja
+        each n in klientList
+          tr(onclick='myFunction('+n.imie+')')
+            td= n.imie
+            td= n.nazwisko            
+            td= n.numer_dowodu 
+            td= n.data_od
+            td= n.data_do
+            td
+                a.btn(href='/edycjaWypozyczenia/'+n.id_wypozyczenia+'/'+n.id_klienta+'/'+sam.id_samochodu)
+                  i.fas.fa-pencil-alt
+                  a.btn(href='/usuwanieWypozyczenia/'+n.id_klienta+'/'+n.id_wypozyczenia)
+                      i.fas.fa-trash-alt
+  .mn5
+    .row
+      a.hwbutton(href='/samochody' style='float:center') Zamknij
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ

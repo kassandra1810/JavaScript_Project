@@ -1,0 +1,308 @@
+
+* {
+	background-color: snow;
+	box-sizing: border-box;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+	grid-gap: 10px;
+	background-color: SeaGreen;
+	padding: 5px;
+}
+
+.header > div {
+	text-align: left;
+	background-color: SeaGreen;
+}
+
+.head1 {
+	grid-column: 1 / span 2;
+	grid-row: 1 / span 2;
+	max-width: 350px;
+	padding-left: 50px;
+}
+
+.logo {
+	max-width:230px;
+	max-height:100px;
+}
+
+.head2 {
+	grid-column: 3 / span 4;
+	font-family: Segoe Print;
+	font-size: 36px;
+}
+.head3 {
+	grid-column: 3 / span 4;
+	grid-row: 2;
+	background-color: SeaGreen;
+}
+
+.headButtons {
+	list-style-type: none;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	background-color: SeaGreen;
+}
+
+.headButtons li {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	padding-left: 15px;	
+	padding-right: 25px;
+	background-color: SeaGreen;
+}
+
+ul a {
+	background-color: Gainsboro;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+}
+
+ul a:hover, ul a:active {
+	background-color: red;
+}
+
+
+.head4 {
+	grid-column: 6 / span 5;
+	grid-row: 2;
+	background-color: SeaGreen;
+	color: white;
+}
+
+.infolinia {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	padding-left: 40px;	
+}
+
+a.wyloguj {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: right;
+	margin-left: 150px;
+	padding-left: 70px;	
+}
+
+.navigation {
+	grid-column: 1;
+	grid-row: 1;
+	display: inline-block;
+	grid-template-columns: auto;
+	grid-gap: 5px;
+	background-color: white;
+	margin: 0px;
+	padding: 3px;
+	color: black;
+}
+.navigation > div {
+	padding: 0px;
+	font-size: 15px;
+}
+
+.nav {
+	text-decoration: none;
+	color: black;
+	text-align: left;
+	margin: 0px;
+	padding: 0px 5px 5px 15px;	
+}
+
+.main {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+	grid-gap: 30px;
+	background-color: snow;
+	padding: 5px 20px;
+}
+
+.main > div {
+	background-color: snow;
+	text-align: center;
+	font-size: 30px;
+}
+
+.mn1 {
+	grid-column: 1 / span 3;
+	grid-row: 1 / span 11;
+	padding: 20px ;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	max-width: 66.6%;
+}
+
+.menuBoczne {
+	display: block;
+	background-color: SeaGreen;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 3px;
+	font-size: 20px;
+	padding: 3px;
+}
+
+.mn2 {
+	grid-column: 5 / span 2;
+	grid-row: 2;	
+	text-align: left;
+}
+.klienci {
+	font-size: 17px;
+	margin: 0;
+	padding: 0;
+}
+
+.mn3 {
+	grid-column: 3 / span 6;
+	grid-row: 3 / span 7;
+	padding: 40px;
+}
+
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+}
+
+label {
+	padding: 12px 12px 12px 12px;
+	display: inline-block;
+	float:left;
+	font-size: 20px;
+}
+
+button[type=button] {
+	background-color: Gainsboro;
+	color: black;
+	padding: 12px 8px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin: 20px;
+}
+
+button[type=button]:hover {
+	background-color: gray;
+}
+
+.hwbutton {
+	background-color: Gainsboro;
+	color: black;
+	padding: 12px 8px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin: 20px;
+	text-decoration: none;
+	font-size: 15px;
+	display: inline-block;
+	float: right;
+}
+.hwbutton:hover {
+	background-color: gray;
+}
+
+
+.divdate {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+}
+.calendar {
+	text-align: left;
+}
+
+
+.col-25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+}
+
+.col-75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.mn4 {
+	grid-column: 7;
+	grid-row: 10;	
+}
+
+
+.mn5 {
+	grid-column: 4 / span 7;
+	grid-row: 11;	
+	padding: 5%;
+	margin: 0;
+}
+.tbuttons {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 30px;
+	padding: 0;
+}
+
+.footer {
+	float:bottom;
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 10px;
+	background-color: SeaGreen;
+	padding: 5px;
+}
+
+
+.footer > div {
+	text-align: left;
+	background-color: SeaGreen;
+}
+
+.foot1 {
+	grid-column: 1;
+	grid-row: 1;
+	text-decoration: none;
+}
+
+
+.foot {
+	text-decoration: none;
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0 auto;
+	padding: 5px 90px 5px 90px;
+}
+
+
+

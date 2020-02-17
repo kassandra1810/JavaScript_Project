@@ -1,0 +1,54 @@
+doctype html
+head
+  link(rel='Stylesheet' href='/css/klienciStyle.css')
+  script(src='https://kit.fontawesome.com/9650b96366.js' crossorigin='anonymous')
+.header
+  .head1
+    img.logo(src='/images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+.main
+  p#demo
+  .mn2
+    #hideDiv  
+    p.klienci  Klienci 
+  .mn3
+    form()
+      table
+        tr
+          th.kolImie Imie
+          th.kolNazwisko Nazwisko
+          th.kolNrDowodu Numer dowodu
+          th.kolAkcja Akcja
+        each n in klientList
+          tr(onclick='myFunction('+n.imie+')')
+            td= n.imie
+            td= n.nazwisko            
+            td= n.numer_dowodu
+            td 
+                a.btn(href='/edycjaWypozyczenia/'+idWyp+'/'+n.id_klienta+'/'+idSam) 
+                    i.fas.fa-check-circle  
+  .mn4
+    a.hwbutton(href='dodawanieKlienta') Dodaj nowego klienta
+  .mn5
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+
+

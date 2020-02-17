@@ -1,0 +1,92 @@
+doctype html
+head
+  link(rel='Stylesheet' href='/css/dokWypozyczenia.css')
+.header
+  .head1
+    img.logo(src='/images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+  a.nav(href='/wypozyczenie') Wypożyczenie
+.main
+  .mn2
+    p.klienci  Wypożyczenie 
+  .mn3
+    .mn31
+      form(action='')
+        div
+          br
+          p.klienci Wyszukany klient
+          br
+      each n in kl
+        .row
+          .col-25
+            label(for='fname') Imię
+          .col-75
+            input#fname(type='text' name='imie' value=n.imie readonly='')
+        .row
+          .col-25
+            label(for='lname') Nazwisko
+          .col-75
+            input#lname(type='text' name='nazwisko' value=n.nazwisko readonly='')
+        .row
+          .divdate
+            label(for='country') Data urodzenia
+          .calendar
+            input(type='date' name='dataUrodzenia' value=n.data_urodzenia readonly='')
+        .row
+          .col-25
+            label(for='subject') Numer dowodu
+          .col-75
+            input#idNumber(type='text' name='numerDowodu' value=n.numer_dowodu readonly='')
+        .row
+          br
+          a.hwbutton(id='hwbutton' href='/wypozyczenie') Zmień
+    .line
+    .mn32
+      form(method='POST' action='/szukanieSamochodu' id='my-form')
+        div
+          br
+          p.klienci Samochód
+          br
+        .row
+          .col-25
+            label(for='dataOd') Data od
+          .col-75
+            input#id.input(type='hidden' name='id' value=kl[0].id_klienta)
+            p.form__help-message
+            input#dataOd.input(type='date' name='dataOd' required='' placeholder='Wpisz datę od...')
+            p.form__help-message
+        .row
+          .col-25
+            label(for='dataDo') Data do
+          .col-75
+            input#dataDo.input(type='date' name='dataDo' required='' placeholder='Wpisz datę do...')
+            p.form__help-message
+        .row
+          input(type='submit' id='hwbutton' value='Szukaj samochód')
+          .col-25
+  .mn5
+    //button.btn(type='reset' style='float: left') Wyczyść dane
+    //button.btn(type='submit' style='float: right') Dodaj Wypożyczenie
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+script(src='/validation/dokonanieWypozyczeniaDaty.js')
+script.
+  

@@ -1,0 +1,65 @@
+doctype html
+head
+  link(rel='Stylesheet' href='css/dw-PoszukiwanieKlienta.css')
+  script(src='https://kit.fontawesome.com/9650b96366.js' crossorigin='anonymous')
+.header
+  .head1
+    img.logo(src='images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypoźyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/klienci') Klienci
+  a.nav(href='/wypozyczenie') Wypożyczenie
+.main
+  .mn2
+    br
+    p.klienci  Wyszukaj klienta
+    br
+  .mn3
+    form(method='POST' action='/szukanieKlienta' id='my-form')
+      .row
+        .col-25
+          label(for='szukany') Wprowadź imię, nazwisko lub numer dowodu
+        .col-75
+          input#fname.input(type='text' name='szukany' placeholder='Wyszukaj...')
+          p.form__help-message
+          br
+          input(type='submit' id='btnSzukajKlienta' value='Szukaj klienta')
+    form()
+      br
+      table
+        tr
+          th Wybierz
+          th Imię
+          th Nazwisko
+          th Numer dowodu
+        each n in klientList
+          tr
+            td
+                a.btn(href='dokonanieWypozyczenia/'+n.id_klienta)
+                  i.fas.fa-check-circle
+            td= n.imie
+            td= n.nazwisko
+            td= n.numer_dowodu
+    br
+    .row
+  .mn5
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+script(src='validation/dodawanieWypozyczeniaKlient.js')
+script.

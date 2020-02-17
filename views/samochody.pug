@@ -1,0 +1,62 @@
+doctype html
+head
+  link(rel='Stylesheet' href='css/samochody.css')
+  script(src='https://kit.fontawesome.com/9650b96366.js' crossorigin='anonymous')
+.header
+  .head1
+    img.logo(src='images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/samochody') Samochody
+.main
+  .mn2
+    #hideDiv 
+    p.samochody  Samochody
+  .mn3
+    form(action='')
+      table
+        tr
+          th.kolMarka Marka
+          th.kolModel Model
+          th.kolNumer Numer rejestracyjny        
+          th.kolAkcja Akcja
+        each n in samochodList
+          tr
+            td= n.marka
+            td= n.model           
+            td= n.numer_rejestracyjny           
+            td
+                a.btn(href='edycjaSamochodu/'+n.id_samochodu)
+                  i.fas.fa-pencil-alt
+                  a.btn(href='szczegolySamochodu/'+n.id_samochodu)
+                    i.fas.fa-info-circle
+                    a.btn(href='usuwanieSamochodu/'+n.id_samochodu onclick="return confirm('Are you sure you want to delete this item?');")
+                      i.fas.fa-trash-alt
+                    a.btn(href='historiaWypozyczenSamochody/'+n.id_samochodu)
+                      i.fas.fa-history
+  .mn4
+    br
+    a.hwbutton(href='dodawanieSamochodu') Dodaj nowy samochód
+    br
+  .mn5
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatnosci
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+
+
+

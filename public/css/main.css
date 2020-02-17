@@ -1,0 +1,304 @@
+
+* {
+	background-color: snow;
+	box-sizing: border-box;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+	grid-gap: 10px;
+	background-color: SeaGreen;
+	padding: 5px;
+}
+
+.header > div {
+	text-align: left;
+	background-color: SeaGreen;
+}
+
+.head1 {
+	grid-column: 1 / span 2;
+	grid-row: 1 / span 2;
+	max-width: 350px;
+	padding-left: 50px;
+}
+
+.logo {
+	max-width:230px;
+	max-height:100px;
+}
+
+.head2 {
+	grid-column: 3 / span 4;
+	font-family: Segoe Print;
+	font-size: 36px;
+}
+.head3 {
+	grid-column: 3 / span 4;
+	grid-row: 2;
+	background-color: SeaGreen;
+}
+
+.headButtons {
+	list-style-type: none;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	background-color: SeaGreen;
+}
+
+.headButtons li {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	padding-left: 15px;	
+	padding-right: 25px;
+	background-color: SeaGreen;
+}
+
+ul a {
+	background-color: Gainsboro;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+}
+
+ul a:hover, ul a:active {
+	background-color: red;
+}
+
+
+.head4 {
+	grid-column: 6 / span 5;
+	grid-row: 2;
+	background-color: SeaGreen;
+	color: white;
+}
+
+.infolinia {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	padding-left: 70px;	
+}
+
+a.logowanie {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	padding-left: 70px;	
+}
+a.rejectracja {
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0p;
+	padding-left: 70px;	
+}
+
+.navigation {
+	grid-column: 1;
+	grid-row: 1;
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 5px;
+	background-color: white;
+	margin: 0px;
+	padding-left: 0px;
+	color: black;
+}
+.navigation > div {
+	padding: 0px;
+	font-size: 15px;
+}
+
+.nav {
+	text-decoration: none;
+	color: black;
+	text-align: left;
+	margin: 0px;
+	padding: 5px 5px 5px 15px;	
+	
+}
+
+.main {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+	grid-gap: 30px;
+	background-color: snow;
+	padding: 15px 0;
+}
+
+.main > div {
+	background-color: snow;
+	text-align: center;
+	font-size: 30px;
+}
+
+.mn1 {
+	grid-column: 1 / span 4;
+}
+
+.mn1 > img {
+    max-width: 40%;
+    display: block;
+	margin: 0 auto;
+}
+
+.mn2 {
+	grid-column: 5 / span 2;
+	text-align: left;
+}
+
+.msam {
+	font-size: 15px;
+}
+
+.mn3 {
+	grid-column: 13 / span 2;
+	grid-row: 1 / span 4;
+	border-style: solid;
+	border-width: 3px;	
+}
+.opis {
+	font-size: 19px;
+}
+
+.mn4 {
+	grid-column: 1 / span 4;
+	grid-row: 2;
+}
+.mn4 > img {
+    max-width: 40%;
+    display: block;
+	margin: 0 auto;
+}
+
+.mn5 {
+	grid-column: 5 / span 2;
+	grid-row: 2;
+	text-align: left;
+}
+.ksam {
+	font-size: 15px;
+}
+
+.mn6 {
+	grid-column: 1 / span 4;
+	grid-row: 3;
+}
+
+.mn6 > img {
+    max-width: 40%;
+    display: block;
+	margin: 0 auto;
+}
+
+.mn7 {
+	grid-column: 5 / span 2;
+	grid-row: 3;
+	text-align: left;
+}
+.ssam {
+	font-size: 15px;
+}
+
+.mn8 {
+	grid-column: 1 / span 4;
+	grid-row: 4;
+}
+
+.mn8 > img {
+    max-width: 40%;
+    display: block;
+	margin: 0 auto;
+}
+
+.mn9 {
+	grid-column: 5 / span 2;
+	grid-row: 4;
+	text-align: left;
+}
+.wsam {
+	font-size: 15px;
+}
+
+
+.footer {
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 10px;
+	background-color: SeaGreen;
+	padding: 5px;
+}
+
+
+.footer > div {
+	text-align: left;
+	background-color: SeaGreen;
+}
+
+.foot1 {
+	grid-column: 1;
+	grid-row: 1;
+	text-decoration: none;
+}
+
+
+.oNas {
+	text-decoration: none;
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0 auto;
+	padding: 5px 90px 5px 90px;
+}
+
+.kontakt {
+	text-decoration: none;
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	padding: 5px 90px 5px 90px;
+}
+.pprywatnosci {
+	text-decoration: none;
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	padding: 5px 90px 5px 90px;
+}
+.regulamin {
+	text-decoration: none;
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	padding: 5px 90px 5px 90px;
+}
+.faq {
+	text-decoration: none;
+	background-color: SeaGreen;
+	color: white;
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	padding: 5px 90px 5px 90px;
+}
+
+

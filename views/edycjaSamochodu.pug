@@ -1,0 +1,83 @@
+doctype html
+head
+  link(rel='Stylesheet' href='/css/edycjaSamochodu.css')
+  // <script src="https://kit.fontawesome.com/9650b96366.js" crossorigin="anonymous"></script>
+.header
+  .head1
+    img.logo(src='/images/LOGO.jpg' alt='Logo')
+  .head2 Samochodzik
+  .head3
+    ul.headButtons
+      li
+        a.hbuttons(href='/samochody') Samochody
+      li
+        a.hbuttons(href='/klienci') Klienci
+      li
+        a.hbuttons(href='/wypozyczenie') Wypożyczenie
+  .head4
+    a.wyloguj(href='#wyloguj') Wyloguj
+.navigation
+  a.nav(href='/') Strona Główna
+  a.nav(href='/samochody') Samochody
+  a.nav(href='/edycjaSamochodu') Edycja Samochodu
+.main
+  .mn2
+    p.klienci  Edycja samochodu 
+  .mn3
+    form(method='POST' action='/edytujSamochod' id='my-form')
+      .row
+        .col-25
+          label(for='marka') Marka
+        .col-75
+          input#marka.input(type='text' name='marka' value=sam.marka)
+          p.form__help-message
+          input#id.input(type='hidden' name='id' value=sam.id_samochodu)
+      .row
+        .col-25
+          label(for='model') Model 
+        .col-75
+          input#model.input(type='text' name='model' value=sam.model)
+          p.form__help-message
+      .row
+        .col-25
+          label(for='pojemnosc') Pojemność silnika
+        .col-75
+          input#pojemnoscSilnika.input(type='text' name='pojemnoscSilnika' value=sam.pojemnosc_silnika)
+          p.form__help-message
+      .row
+        .col-25
+          label(for='skrzynia') Skrzynia biegów
+        .col-75
+          input#skrzyniaBiegow.input(type='text' name='skrzyniaBiegow' value=sam.skrzynia_biegow)
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Kolor
+        .col-75
+          input#kolor.input(type='text' name='kolor' value=sam.kolor)
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Numer rejestracyjny
+        .col-75
+          input#numerRejestracyjny.input(type='text' name='numerRejestracyjny' value=sam.numer_rejestracyjny)
+          p.form__help-message
+      .row
+        .col-25
+          label(for='subject') Zdjęcie
+        .col-75
+          // <input type="file" onchange="onFileSelected(event)">
+          //img#myimage(height='100' src='images/ford.jpg' value=sam.zdjecie)
+          //p.form__help-message
+      .row
+        input(type='submit' value='Edytuj samochód')
+        input(type='reset' onclick='history.back();' style='float:center' value='Anuluj')
+.footer
+  .foot1
+    a.foot(href='#oNas') O nas
+    a.foot(href='#kontakt') Kontakt
+    a.foot(href='#pprywatnosci') Polityka Przywatności
+    a.foot(href='#regulamin') Regulamin
+    a.foot(href='#faq') FAQ
+script(src='/validation/edycjaSamochodu.js')
+script.
